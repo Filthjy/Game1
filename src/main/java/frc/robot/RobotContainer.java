@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.AutonomousDistance;
 import frc.robot.commands.DriveForward;
+import frc.robot.commands.TurnDegrees;
 import frc.robot.subsystems.RomiDrivetrain;
 import edu.wpi.first.wpilibj2.command.Command;
 
@@ -40,6 +41,7 @@ public class RobotContainer {
     m_Chooser.addOption("Drive Forward", new DriveForward(m_romiDrivetrain, 5.0));
     m_Chooser.setDefaultOption("AutonomousDistance", new AutonomousDistance(m_romiDrivetrain));
     SmartDashboard.putData(m_Chooser);
+    m_Chooser.addOption("Turn Degrees", new TurnDegrees(m_romiDrivetrain, 1));
   }
 
   /**
