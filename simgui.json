@@ -1,8 +1,10 @@
 {
   "HALProvider": {
     "Encoders": {
-      "window": {
-        "visible": true
+      "0": {
+        "header": {
+          "open": true
+        }
       }
     },
     "PWM Outputs": {
