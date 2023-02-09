@@ -49,31 +49,31 @@ public class RomiGyro extends SubsystemBase {
     /**
      * @return Simulated rate for the Z axis
      */
-    public SimDouble getSimRateZ(){
+    public double getSimRateZ(){
         if(m_simRateZ != null) {
-            return m_simRateZ;
+            return m_simRateZ.get();
         }
-        return m_simAngleZ;
+        return 0.0;
     }
 
     /**
      * @return Simulated rate for the X axis
      */
-    public SimDouble getSimRateX(){
+    public double getSimRateX(){
         if(m_simRateX != null) {
-            return m_simRateX;
+            return m_simRateX.get();
         }
-        return m_simAngleX;
+        return 0.0;
     }
 
     /**
      * @return Simulated rate for the Y axis
      */
-    public SimDouble getSimRateY(){
+    public double getSimRateY(){
         if(m_simRateY != null) {
-            return m_simRateY;
+            return m_simRateY.get();
         }
-        return m_simAngleY;
+        return 0.0;
     }
 
     /**
