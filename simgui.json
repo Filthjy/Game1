@@ -1,10 +1,13 @@
 {
   "HALProvider": {
+    "DIO": {
+      "window": {
+        "visible": true
+      }
+    },
     "Encoders": {
-      "0": {
-        "header": {
-          "open": true
-        }
+      "window": {
+        "visible": true
       }
     },
     "PWM Outputs": {
