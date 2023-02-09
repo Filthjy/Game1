@@ -9,10 +9,14 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class RomiGyro extends SubsystemBase {
     private SimDouble m_simAngleZ;
     private double m_angleZOffset;
-
+    private double m_angleYOffset;
+    private double m_angleXOffset;
     private SimDouble m_simAngleX;
-
     private SimDouble m_simAngleY;
+    private SimDouble m_simRateZ;
+    private SimDouble m_simRateX;
+    private SimDouble m_simRateY;
+    
 
     LinearFilter smoothFilter = LinearFilter.singlePoleIIR(0.1, 0.02);
 
@@ -26,9 +30,7 @@ public class RomiGyro extends SubsystemBase {
         if(gyroSimDevice != null) {
             gyroSimDevice.createBoolean("init", Direction.kOutput, true);
             m_simAngleZ = gyroSimDevice.createDouble("angle_z", Direction.kOutput, 0.0);
-
             m_simAngleX = gyroSimDevice.createDouble("angle x", Direction.kOutput, 0.0);
-
             m_simAngleY = gyroSimDevice.createDouble(getName(), Direction.kOutput, 0.0);
         }
     }
@@ -44,13 +46,42 @@ public class RomiGyro extends SubsystemBase {
         }
         return 0.0;
     }
+    /**
+     * @return Simulated rate for the Z axis
+     */
+    public SimDouble getSimRateZ(){
+        if(m_simRateZ != null) {
+            return m_simRateZ;
+        }
+        return m_simAngleZ;
+    }
+
+    /**
+     * @return Simulated rate for the X axis
+     */
+    public SimDouble getSimRateX(){
+        if(m_simRateX != null) {
+            return m_simRateX;
+        }
+        return m_simAngleX;
+    }
+
+    /**
+     * @return Simulated rate for the Y axis
+     */
+    public SimDouble getSimRateY(){
+        if(m_simRateY != null) {
+            return m_simRateY;
+        }
+        return m_simAngleY;
+    }
 
     /**
      * @return the value of angle x
      */
     public double getAngleX() {
-        if(m_simAngleZ != null) {
-            return smoothFilter.calculate(m_simAngleX.get()) - m_angleZOffset;
+        if(m_simAngleX != null) {
+            return smoothFilter.calculate(m_simAngleX.get()) - m_angleXOffset;
         }
         return 0.0;
     }
@@ -59,8 +90,8 @@ public class RomiGyro extends SubsystemBase {
      * @return the value of angle y
      */
     public double getAngleY() {
-        if(m_simAngleZ != null) {
-            return smoothFilter.calculate(m_simAngleY.get()) - m_angleZOffset;
+        if(m_simAngleY != null) {
+            return smoothFilter.calculate(m_simAngleY.get()) - m_angleYOffset;
         }
         return 0.0;
     }
