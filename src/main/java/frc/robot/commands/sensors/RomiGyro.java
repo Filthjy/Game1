@@ -46,7 +46,7 @@ public class RomiGyro extends SubsystemBase {
     }
 
     /**
-     * @return
+     * @return the value of angle x
      */
     public double getAngleX() {
         if(m_simAngleZ != null) {
@@ -56,7 +56,7 @@ public class RomiGyro extends SubsystemBase {
     }
 
     /**
-     * @return
+     * @return the value of angle y
      */
     public double getAngleY() {
         if(m_simAngleZ != null) {
