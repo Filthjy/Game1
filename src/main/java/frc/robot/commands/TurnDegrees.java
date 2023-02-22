@@ -6,7 +6,7 @@ import frc.robot.subsystems.RomiDrivetrain;
 public class TurnDegrees extends CommandBase {
     private final RomiDrivetrain m_subsystem;
     private double m_degrees;
-    private static final double diameter = 500.5;
+    private static final double diameter = 5;
 
     public TurnDegrees(RomiDrivetrain subsystem, double degrees)
     {
@@ -39,7 +39,7 @@ public class TurnDegrees extends CommandBase {
 
   public boolean isFinished() {
     double averageDistance = (Math.abs(m_subsystem.getLeftDistance()) + Math.abs(m_subsystem.getRightDistance())) / 2;
-    double angle = (averageDistance/(Math.PI * diameter)*360);
+    double angle = (averageDistance/(Math.PI * diameter)*180);
     return angle > m_degrees;
   }
 
