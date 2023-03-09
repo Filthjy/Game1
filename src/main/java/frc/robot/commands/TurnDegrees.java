@@ -6,7 +6,7 @@ import frc.robot.subsystems.RomiDrivetrain;
 public class TurnDegrees extends CommandBase {
     private final RomiDrivetrain m_subsystem;
     private double m_degrees;
-    private static final double diameter = 5;
+    private static final double diameter = 50.0;
 
     public TurnDegrees(RomiDrivetrain subsystem, double degrees)
     {

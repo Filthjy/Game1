@@ -7,17 +7,16 @@ public class AutonomousDistance extends SequentialCommandGroup{
     public AutonomousDistance(RomiDrivetrain drivetrain)
     {
         addCommands(
-            new DriveForward(drivetrain, 5.0),
-            new TurnDegrees(drivetrain, 70),
-            new DriveForward(drivetrain, 5.0),
-            new TurnDegrees(drivetrain, 70),
-            new DriveForward(drivetrain, 5.0),
-            new TurnDegrees(drivetrain, 70),
-            new DriveForward(drivetrain, 5.0),
-            new TurnDegrees(drivetrain, 70),
-            new DriveForward(drivetrain, 5.0),
-            new TurnDegrees(drivetrain, 70)
+
+            new TurnDegrees(drivetrain, 38),
+            new TurnDegrees(drivetrain, 38),
+            new TurnDegrees(drivetrain, 38),
+            new DriveForward(drivetrain, 40.0),
+            new TurnDegrees(drivetrain, 38),
+            new DriveForward(drivetrain, 20.0)
+            
+
+            
         );
-        
     }
 }

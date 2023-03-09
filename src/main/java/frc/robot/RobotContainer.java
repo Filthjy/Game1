@@ -30,12 +30,6 @@ public class RobotContainer {
     configureButtonBindings();
   }
 
-  /**
-   * Use this method to define your button->command mappings. Buttons can be created by
-   * instantiating a {@link edu.wpi.first.wpilibj.GenericHID} or one of its subclasses ({@link
-   * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a {@link
-   * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
-   */
   private void configureButtonBindings() {
     m_Chooser.addOption("Drive Forward", new DriveForward(m_romiDrivetrain, 5.0));
     m_Chooser.setDefaultOption("AutonomousDistance", new AutonomousDistance(m_romiDrivetrain));

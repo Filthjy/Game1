@@ -23,7 +23,7 @@ public class DriveForward extends CommandBase {
 
   public void execute() 
     {
-        m_subsystem.drive(0.5, 0);
+        m_subsystem.drive(0.6, 0);
     }
 
   // Called once the command ends or is interrupted.
